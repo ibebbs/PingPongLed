@@ -1,0 +1,216 @@
+﻿<Page
+    x:Class="LEDClient.Uwp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LEDClient.Uwp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <local:ViewModel x:Key="ViewModel"/>
+        <local:ColorToBrushConverter x:Key="ColorToBrushConverter"/>
+        <Style x:Key="FlatButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
+            <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+            <Setter Property="Padding" Value="8,4,8,4"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+            <Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}"/>
+            <Setter Property="FocusVisualMargin" Value="-3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentTransitions="{TemplateBinding ContentTransitions}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid DataContext="{Binding Source={StaticResource ViewModel}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="7" Style="{StaticResource FlatButtonStyle}" Grid.Row="0" Grid.Column="0" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[7], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="6" Style="{StaticResource FlatButtonStyle}" Grid.Row="0" Grid.Column="1" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[6], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="5" Style="{StaticResource FlatButtonStyle}" Grid.Row="0" Grid.Column="2" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[5], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="4" Style="{StaticResource FlatButtonStyle}" Grid.Row="0" Grid.Column="3" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[4], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="3" Style="{StaticResource FlatButtonStyle}" Grid.Row="0" Grid.Column="4" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[3], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="2" Style="{StaticResource FlatButtonStyle}" Grid.Row="0" Grid.Column="5" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[2], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="1" Style="{StaticResource FlatButtonStyle}" Grid.Row="0" Grid.Column="6" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[1], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="0" Style="{StaticResource FlatButtonStyle}" Grid.Row="0" Grid.Column="7" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[0], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="8" Style="{StaticResource FlatButtonStyle}" Grid.Row="1" Grid.Column="0" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[8], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="9" Style="{StaticResource FlatButtonStyle}" Grid.Row="1" Grid.Column="1" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[9], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="10" Style="{StaticResource FlatButtonStyle}" Grid.Row="1" Grid.Column="2" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[10], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="11" Style="{StaticResource FlatButtonStyle}" Grid.Row="1" Grid.Column="3" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[11], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="12" Style="{StaticResource FlatButtonStyle}" Grid.Row="1" Grid.Column="4" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[12], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="13" Style="{StaticResource FlatButtonStyle}" Grid.Row="1" Grid.Column="5" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[13], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="14" Style="{StaticResource FlatButtonStyle}" Grid.Row="1" Grid.Column="6" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[14], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="15" Style="{StaticResource FlatButtonStyle}" Grid.Row="1" Grid.Column="7" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[15], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="23" Style="{StaticResource FlatButtonStyle}" Grid.Row="2" Grid.Column="0" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[23], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="22" Style="{StaticResource FlatButtonStyle}" Grid.Row="2" Grid.Column="1" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[22], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="21" Style="{StaticResource FlatButtonStyle}" Grid.Row="2" Grid.Column="2" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[21], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="20" Style="{StaticResource FlatButtonStyle}" Grid.Row="2" Grid.Column="3" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[20], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="19" Style="{StaticResource FlatButtonStyle}" Grid.Row="2" Grid.Column="4" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[19], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="18" Style="{StaticResource FlatButtonStyle}" Grid.Row="2" Grid.Column="5" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[18], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="17" Style="{StaticResource FlatButtonStyle}" Grid.Row="2" Grid.Column="6" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[17], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="16" Style="{StaticResource FlatButtonStyle}" Grid.Row="2" Grid.Column="7" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[16], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="24" Style="{StaticResource FlatButtonStyle}" Grid.Row="3" Grid.Column="0" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[24], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="25" Style="{StaticResource FlatButtonStyle}" Grid.Row="3" Grid.Column="1" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[25], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="26" Style="{StaticResource FlatButtonStyle}" Grid.Row="3" Grid.Column="2" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[26], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="27" Style="{StaticResource FlatButtonStyle}" Grid.Row="3" Grid.Column="3" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[27], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="28" Style="{StaticResource FlatButtonStyle}" Grid.Row="3" Grid.Column="4" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[28], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="29" Style="{StaticResource FlatButtonStyle}" Grid.Row="3" Grid.Column="5" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[29], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="30" Style="{StaticResource FlatButtonStyle}" Grid.Row="3" Grid.Column="6" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[30], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="31" Style="{StaticResource FlatButtonStyle}" Grid.Row="3" Grid.Column="7" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[31], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="39" Style="{StaticResource FlatButtonStyle}" Grid.Row="4" Grid.Column="0" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[39], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="38" Style="{StaticResource FlatButtonStyle}" Grid.Row="4" Grid.Column="1" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[38], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="37" Style="{StaticResource FlatButtonStyle}" Grid.Row="4" Grid.Column="2" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[37], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="36" Style="{StaticResource FlatButtonStyle}" Grid.Row="4" Grid.Column="3" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[36], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="35" Style="{StaticResource FlatButtonStyle}" Grid.Row="4" Grid.Column="4" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[35], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="34" Style="{StaticResource FlatButtonStyle}" Grid.Row="4" Grid.Column="5" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[34], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="33" Style="{StaticResource FlatButtonStyle}" Grid.Row="4" Grid.Column="6" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[33], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="32" Style="{StaticResource FlatButtonStyle}" Grid.Row="4" Grid.Column="7" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[32], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="40" Style="{StaticResource FlatButtonStyle}" Grid.Row="5" Grid.Column="0" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[40], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="41" Style="{StaticResource FlatButtonStyle}" Grid.Row="5" Grid.Column="1" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[41], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="42" Style="{StaticResource FlatButtonStyle}" Grid.Row="5" Grid.Column="2" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[42], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="43" Style="{StaticResource FlatButtonStyle}" Grid.Row="5" Grid.Column="3" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[43], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="44" Style="{StaticResource FlatButtonStyle}" Grid.Row="5" Grid.Column="4" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[44], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="45" Style="{StaticResource FlatButtonStyle}" Grid.Row="5" Grid.Column="5" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[45], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="46" Style="{StaticResource FlatButtonStyle}" Grid.Row="5" Grid.Column="6" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[46], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+            <Button Command="{Binding Path=ChangeColourCommand}" CommandParameter="47" Style="{StaticResource FlatButtonStyle}" Grid.Row="5" Grid.Column="7" Margin="10">
+                <Ellipse Fill="{Binding Path=Colours[47], Converter={StaticResource ColorToBrushConverter}, Mode=OneWay}" />
+            </Button>
+        </Grid>
+        <ColorPicker Grid.Column="1" Color="{Binding Path=CurrentColor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</Page>
